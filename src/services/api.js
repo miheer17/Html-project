@@ -1,13 +1,16 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' 
+    ? '/api' 
+    : 'http://localhost:8000/api');
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 3000,
+  timeout: 6000,
 });
 
 const SEED_LOANS = [
@@ -194,7 +197,7 @@ export const apiService = {
     } catch (error) {
       return {
         status: "healthy",
-        service: "LendPulse AI Credit Intelligence Core",
+        service: "CapitalPulse AI Credit Intelligence Core",
         version: "1.0.0",
         modelLoaded: true,
         selectedModel: "Logistic Regression",
