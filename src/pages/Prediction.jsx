@@ -218,8 +218,8 @@ const Prediction = () => {
 
       {/* Model Selector Bar */}
       <div className="prediction-selector-bar" style={{
-        background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 100%)',
-        border: '1px solid #4338CA',
+        background: 'linear-gradient(135deg, #065F46 0%, #064E3B 100%)',
+        border: '1.5px solid #10B981',
         padding: '1.25rem 1.75rem',
         borderRadius: '16px',
         display: 'flex',
@@ -252,8 +252,8 @@ const Prediction = () => {
             maxWidth: '100%', 
             fontWeight: 800, 
             backgroundColor: '#FFFFFF', 
-            border: '2px solid #818CF8', 
-            color: '#1E1B4B',
+            border: '2px solid #10B981', 
+            color: '#064E3B',
             fontSize: '0.95rem',
             padding: '0.75rem 1.1rem',
             borderRadius: '10px',
@@ -556,17 +556,17 @@ const Prediction = () => {
 
               {/* Model Badge */}
               <div style={{
-                background: '#4F46E5',
+                background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
                 color: '#FFFFFF',
-                padding: '0.6rem 1rem',
-                borderRadius: '10px',
+                padding: '0.65rem 1rem',
+                borderRadius: '12px',
                 marginBottom: '1.25rem',
                 fontSize: '0.875rem',
                 fontWeight: 800,
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.6rem',
-                boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)'
+                boxShadow: '0 4px 14px rgba(16, 185, 129, 0.3)'
               }}>
                 <Cpu size={18} color="#FFFFFF" />
                 <span>Selected Model: {result.selectedModel || selectedModel}</span>

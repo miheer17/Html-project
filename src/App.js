@@ -14,13 +14,13 @@ import apiService from './services/api';
 import './styles/index.css';
 
 const pageTitles = {
-  '/': { title: 'Executive Overview', subtitle: 'Loan default metrics and portfolio summary' },
-  '/prediction': { title: 'Loan Default Prediction', subtitle: 'Real-time scikit-learn ML inference engine' },
-  '/loans': { title: 'Loan Portfolio', subtitle: 'Comprehensive loan evaluation records' },
-  '/analytics': { title: 'ML Performance & Benchmarking', subtitle: 'scikit-learn model evaluation metrics' },
-  '/risk-analysis': { title: 'Risk Threshold Analysis', subtitle: 'Credit risk matrix & probability distributions' },
-  '/reports': { title: 'Compliance Reports', subtitle: 'Exportable loan risk audit data' },
-  '/profile': { title: 'Officer Profile & System Status', subtitle: 'Underwriter credentials and API diagnostics' }
+  '/': { title: 'Executive Risk Hub', subtitle: 'Portfolio risk telemetry and loan default performance' },
+  '/prediction': { title: 'Credit Underwriter AI', subtitle: 'Multi-algorithm real-time credit default inference' },
+  '/loans': { title: 'Loan Registry', subtitle: 'Audited applicant evaluations & portfolio records' },
+  '/analytics': { title: 'Model Benchmark Analytics', subtitle: 'Cross-validated classification metrics & feature weights' },
+  '/risk-analysis': { title: 'Risk Exposure Matrix', subtitle: 'Credit risk scoring tiers & default threshold distributions' },
+  '/reports': { title: 'Audit & Compliance Reports', subtitle: 'Exportable loan evaluation audit logs' },
+  '/profile': { title: 'Lead Architect & System Telemetry', subtitle: 'Underwriter credentials and ML core diagnostics' }
 };
 
 function MainLayout() {
@@ -57,7 +57,7 @@ function MainLayout() {
     return () => clearInterval(interval);
   }, []);
 
-  const pageInfo = pageTitles[location.pathname] || { title: 'CrediGuard AI', subtitle: 'Loan Risk Management' };
+  const pageInfo = pageTitles[location.pathname] || { title: 'LendPulse AI', subtitle: 'Credit Risk Intelligence' };
 
   return (
     <div className="app-container">

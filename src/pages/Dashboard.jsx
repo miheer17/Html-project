@@ -98,29 +98,31 @@ const Dashboard = () => {
       {/* Banner */}
       <div className="glass-card" style={{
         padding: '1.75rem 2rem',
-        background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, var(--bg-card) 100%)',
-        border: '1px solid rgba(79, 70, 229, 0.3)',
+        background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.08) 50%, var(--bg-card) 100%)',
+        border: '1.5px solid rgba(16, 185, 129, 0.35)',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '1rem'
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-            <Sparkles size={18} color="var(--accent-primary)" />
-            <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Real-Time Predictive Risk Intelligence
+            <Sparkles size={18} color="#10B981" />
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#10B981', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              LendPulse AI • Risk Intelligence Network
             </span>
           </div>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-            Executive Loan Default & Portfolio Risk Overview
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem', letterSpacing: '-0.02em' }}>
+            Credit Risk Portfolio Telemetry
           </h2>
           <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', maxWidth: '750px' }}>
-            Powered by scikit-learn Machine Learning (Random Forest classifier trained on 255,347 loan applications) and served via Python FastAPI backend.
+            Multi-model Machine Learning inference engine analyzing 255,347+ benchmarked credit applications with real-time risk stratification.
           </p>
         </div>
 
-        <Link to="/prediction" className="btn-primary" style={{ padding: '0.85rem 1.75rem', fontSize: '0.95rem' }}>
-          <span>Assess New Loan</span>
+        <Link to="/prediction" className="btn-primary" style={{ padding: '0.85rem 1.75rem', fontSize: '0.925rem' }}>
+          <span>Launch Underwriter</span>
           <ArrowRight size={18} />
         </Link>
       </div>
@@ -143,9 +145,9 @@ const Dashboard = () => {
         <StatCard 
           title="Total Applications" 
           value={totalApps.toLocaleString()} 
-          subtext="Dataset + Live session records" 
+          subtext="Benchmarked + Live inferences" 
           icon={Users} 
-          color="indigo" 
+          color="emerald" 
         />
         <StatCard 
           title="Defaulted Loans" 
@@ -155,11 +157,11 @@ const Dashboard = () => {
           color="rose" 
         />
         <StatCard 
-          title="Non-Defaulted Loans" 
+          title="Performing Loans" 
           value={nonDefaulted.toLocaleString()} 
-          subtext="Standard non-default applicants" 
+          subtext="Healthy credit accounts" 
           icon={CheckCircle} 
-          color="emerald" 
+          color="cyan" 
         />
         <StatCard 
           title="Portfolio Default Rate" 
@@ -171,14 +173,14 @@ const Dashboard = () => {
         <StatCard 
           title="Low Risk Applicants" 
           value={lowRiskCount} 
-          subtext="Recommended approval" 
+          subtext="Automated greenlit approval" 
           icon={ShieldCheck} 
           color="emerald" 
         />
         <StatCard 
           title="High Risk Applicants" 
           value={highRiskCount} 
-          subtext="Underwriting flag" 
+          subtext="Underwriting protocol active" 
           icon={ShieldAlert} 
           color="rose" 
         />
@@ -269,8 +271,8 @@ const Dashboard = () => {
             <AreaChart data={monthlyTrendData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorApps" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#6366F1" stopOpacity={0.4}/>
-                  <stop offset="95%" stopColor="#6366F1" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#10B981" stopOpacity={0.4}/>
+                  <stop offset="95%" stopColor="#10B981" stopOpacity={0}/>
                 </linearGradient>
                 <linearGradient id="colorDefs" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#EF4444" stopOpacity={0.4}/>
@@ -279,10 +281,10 @@ const Dashboard = () => {
               </defs>
               <XAxis dataKey="month" stroke="#64748B" fontSize={12} />
               <YAxis stroke="#64748B" fontSize={12} />
-              <Tooltip contentStyle={{ background: '#1E293B', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', color: '#FFF' }} />
+              <Tooltip contentStyle={{ background: '#0F192E', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', color: '#FFF' }} />
               <Legend verticalAlign="top" height={36} />
-              <Area type="monotone" dataKey="applications" name="Total Applications" stroke="#6366F1" fillOpacity={1} fill="url(#colorApps)" />
-              <Area type="monotone" dataKey="defaults" name="Default Cases" stroke="#EF4444" fillOpacity={1} fill="url(#colorDefs)" />
+              <Area type="monotone" dataKey="applications" name="Origination Volume" stroke="#10B981" fillOpacity={1} fill="url(#colorApps)" strokeWidth={2} />
+              <Area type="monotone" dataKey="defaults" name="Flagged Default Risk" stroke="#EF4444" fillOpacity={1} fill="url(#colorDefs)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
         </div>

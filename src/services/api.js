@@ -12,7 +12,7 @@ const apiClient = axios.create({
 
 const SEED_LOANS = [
   {
-    id: "LN-1001",
+    id: "LP-1001",
     timestamp: "2026-09-25 10:15:20",
     selectedModel: "Logistic Regression",
     prediction: 0,
@@ -30,7 +30,7 @@ const SEED_LOANS = [
     }
   },
   {
-    id: "LN-1002",
+    id: "LP-1002",
     timestamp: "2026-09-25 11:20:44",
     selectedModel: "Logistic Regression",
     prediction: 1,
@@ -48,7 +48,7 @@ const SEED_LOANS = [
     }
   },
   {
-    id: "LN-1003",
+    id: "LP-1003",
     timestamp: "2026-09-25 12:05:12",
     selectedModel: "Logistic Regression",
     prediction: 0,
@@ -66,7 +66,7 @@ const SEED_LOANS = [
     }
   },
   {
-    id: "LN-1004",
+    id: "LP-1004",
     timestamp: "2026-09-25 13:40:05",
     selectedModel: "Logistic Regression",
     prediction: 0,
@@ -84,7 +84,7 @@ const SEED_LOANS = [
     }
   },
   {
-    id: "LN-1005",
+    id: "LP-1005",
     timestamp: "2026-09-25 14:18:30",
     selectedModel: "Logistic Regression",
     prediction: 1,
@@ -103,7 +103,7 @@ const SEED_LOANS = [
   }
 ];
 
-const LOCAL_STORAGE_KEY = 'crediguard_loans_v1';
+const LOCAL_STORAGE_KEY = 'lendpulse_loans_v2';
 
 function getStoredLoans() {
   try {
@@ -157,7 +157,7 @@ function mockPredict(inputData) {
     message = `Evaluated by ${modelName}: Moderate risk indicators. Underwriting review recommended.`;
   }
 
-  const recordId = inputData.id || `LN-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+  const recordId = inputData.id || `LP-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
   const now = new Date().toISOString().replace('T', ' ').substr(0, 19);
 
   const response = {
@@ -194,7 +194,7 @@ export const apiService = {
     } catch (error) {
       return {
         status: "healthy",
-        service: "CrediGuard AI Loan Default Prediction API",
+        service: "LendPulse AI Credit Intelligence Core",
         version: "1.0.0",
         modelLoaded: true,
         selectedModel: "Logistic Regression",

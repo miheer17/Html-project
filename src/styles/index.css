@@ -1,22 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
 
-/* Default Theme: Executive Light Financial Theme */
+/* ========================================================
+   LendPulse AI - Modern High-End Fintech Design System
+   Color Palette: Deep Obsidian, Luminous Emerald & Cyan
+   ======================================================== */
 :root {
   --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
-  --bg-sidebar: #0F172A;
+  --bg-sidebar: #090D16;
   --border-color: #E2E8F0;
-  --border-glow: rgba(79, 70, 229, 0.4);
+  --border-glow: rgba(16, 185, 129, 0.4);
   
-  --text-main: #0F172A;
-  --text-muted: #334155;
+  --text-main: #0B132B;
+  --text-muted: #475569;
   --text-dim: #64748B;
   
-  --accent-primary: #4F46E5;
-  --accent-primary-hover: #4338CA;
-  --accent-cyan: #0284C7;
+  --accent-primary: #059669;
+  --accent-primary-hover: #047857;
+  --accent-cyan: #0891B2;
+  --accent-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
   
   --risk-low: #059669;
   --risk-low-bg: #D1FAE5;
@@ -25,42 +29,44 @@
   --risk-high: #DC2626;
   --risk-high-bg: #FEE2E2;
 
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.12);
-  --shadow-glow: 0 0 24px rgba(79, 70, 229, 0.2);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 14px 34px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.2);
   
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 }
 
-/* Dark Theme Variant */
+/* Dark Theme Variant: Ultra-Sleek Obsidian */
 [data-theme="dark"] {
-  --bg-primary: #0B132B;
-  --bg-secondary: #1C2541;
-  --bg-card: #141E33;
-  --bg-card-hover: #1E2B4A;
-  --bg-sidebar: #0F172A;
-  --border-color: rgba(255, 255, 255, 0.12);
-  --border-glow: rgba(99, 102, 241, 0.4);
+  --bg-primary: #070B14;
+  --bg-secondary: #0D1527;
+  --bg-card: #0F192E;
+  --bg-card-hover: #162442;
+  --bg-sidebar: #050811;
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-glow: rgba(16, 185, 129, 0.4);
   
-  --text-main: #F8FAFC;
-  --text-muted: #CBD5E1;
-  --text-dim: #94A3B8;
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
   
-  --accent-primary: #6366F1;
-  --accent-primary-hover: #4F46E5;
-  --accent-cyan: #06B6D4;
+  --accent-primary: #10B981;
+  --accent-primary-hover: #059669;
+  --accent-cyan: #22D3EE;
+  --accent-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
   
   --risk-low: #34D399;
-  --risk-low-bg: rgba(16, 185, 129, 0.2);
+  --risk-low-bg: rgba(16, 185, 129, 0.15);
   --risk-medium: #FBBF24;
-  --risk-medium-bg: rgba(245, 158, 11, 0.2);
+  --risk-medium-bg: rgba(245, 158, 11, 0.15);
   --risk-high: #F87171;
-  --risk-high-bg: rgba(239, 68, 68, 0.2);
+  --risk-high-bg: rgba(239, 68, 68, 0.15);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.25);
 }
 
 *, *::before, *::after {
@@ -69,6 +75,11 @@
   padding: 0;
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
 html, body {
@@ -83,62 +94,70 @@ html, body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
 }
 
-/* Glassmorphism / Elevated Card Style */
+/* Glassmorphism Fintech Card Style */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
   overflow: hidden;
 }
 
 .glass-card:hover {
   border-color: var(--border-glow);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #0284C7 100%);
+  background: linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #3B82F6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Risk Badges */
+/* Risk Badges with Pill Glow */
 .badge-low {
   background: var(--risk-low-bg);
   color: var(--risk-low);
   border: 1px solid rgba(16, 185, 129, 0.4);
-  font-weight: 800;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
 }
 
 .badge-medium {
   background: var(--risk-medium-bg);
   color: var(--risk-medium);
   border: 1px solid rgba(245, 158, 11, 0.4);
-  font-weight: 800;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
 }
 
 .badge-high {
   background: var(--risk-high-bg);
   color: var(--risk-high);
   border: 1px solid rgba(239, 68, 68, 0.4);
-  font-weight: 800;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
 }
 
 /* Layout Utilities */
@@ -151,10 +170,11 @@ html, body {
   position: relative;
 }
 
+/* Sidebar Styles */
 .app-sidebar {
   width: 260px;
-  background: #0F172A;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-sidebar);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -183,27 +203,29 @@ html, body {
   min-width: 0;
 }
 
-/* Button Styling */
+/* Button Styling: Modern Fintech */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #3730A3 100%);
-  color: white;
+  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  color: #FFFFFF;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
-  font-size: 0.95rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+  font-size: 0.925rem;
+  letter-spacing: -0.01em;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
 }
 
 .btn-primary:active {
@@ -215,20 +237,21 @@ html, body {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  font-weight: 700;
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .btn-secondary:hover {
   background: var(--bg-card-hover);
   border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* Table Responsive Container */
@@ -246,24 +269,24 @@ html, body {
 }
 
 .custom-table th {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(16, 185, 129, 0.04);
   color: var(--text-muted);
-  font-size: 0.775rem;
+  font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.9rem 1.1rem;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.25rem;
   text-align: left;
   border-bottom: 2px solid var(--border-color);
   white-space: nowrap;
 }
 
 [data-theme="dark"] .custom-table th {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(16, 185, 129, 0.06);
 }
 
 .custom-table td {
-  padding: 1rem 1.1rem;
+  padding: 1.1rem 1.25rem;
   color: var(--text-main);
   border-bottom: 1px solid var(--border-color);
   font-size: 0.875rem;
@@ -298,28 +321,29 @@ html, body {
 }
 
 .form-label {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
   color: var(--text-muted);
+  letter-spacing: -0.01em;
 }
 
 .form-input, .form-select {
   background: var(--bg-card);
   border: 1.5px solid var(--border-color);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
   color: var(--text-main);
   font-size: 0.95rem;
   font-weight: 600;
   outline: none;
   transition: all 0.2s ease;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
   width: 100%;
 }
 
 .form-input:focus, .form-select:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
 .form-select option {
@@ -338,8 +362,8 @@ html, body {
   border: none;
   color: var(--text-main);
   cursor: pointer;
-  padding: 0.4rem;
-  border-radius: 8px;
+  padding: 0.45rem;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -354,8 +378,8 @@ html, body {
   border: none;
   color: #94A3B8;
   cursor: pointer;
-  padding: 0.3rem;
-  border-radius: 6px;
+  padding: 0.35rem;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
 }
@@ -392,27 +416,28 @@ html, body {
 /* Tablet & Mobile Breakpoints */
 @media (max-width: 1024px) {
   .app-sidebar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    width: 280px !important;
-    transform: translateX(-100%) !important;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    z-index: 1000 !important;
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    height: 100vh;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 4px 0 28px rgba(0, 0, 0, 0.6);
   }
 
   .app-sidebar.mobile-open {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
 
   .sidebar-backdrop {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(7, 11, 20, 0.75);
+    backdrop-filter: blur(5px);
     z-index: 999;
   }
 
@@ -471,7 +496,7 @@ html, body {
 
   .glass-card {
     padding: 1.15rem !important;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .prediction-selector-bar {

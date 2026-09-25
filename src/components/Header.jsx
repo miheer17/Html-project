@@ -12,7 +12,7 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 1.5rem',
+        padding: '0 1.75rem',
         position: 'sticky',
         top: 0,
         zIndex: 10,
@@ -32,17 +32,18 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
 
         <div style={{ minWidth: 0 }}>
           <h2 style={{ 
-            fontSize: '1.15rem', 
+            fontSize: '1.2rem', 
             fontWeight: 800, 
             color: 'var(--text-main)', 
             whiteSpace: 'nowrap', 
             overflow: 'hidden', 
-            textOverflow: 'ellipsis' 
+            textOverflow: 'ellipsis',
+            fontFamily: 'var(--font-heading)'
           }}>
             {title}
           </h2>
           {subtitle && (
-            <p className="desktop-only" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+            <p className="desktop-only" style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500 }}>
               {subtitle}
             </p>
           )}
@@ -55,14 +56,14 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
           onClick={toggleTheme}
           style={{
             background: 'var(--bg-secondary)',
-            border: '1px solid var(--border-color)',
-            padding: '0.45rem 0.75rem',
-            borderRadius: '20px',
+            border: '1.5px solid var(--border-color)',
+            padding: '0.45rem 0.8rem',
+            borderRadius: '9999px',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.4rem',
-            fontSize: '0.8rem',
-            fontWeight: 600,
+            gap: '0.45rem',
+            fontSize: '0.78rem',
+            fontWeight: 700,
             color: 'var(--text-main)',
             cursor: 'pointer',
             transition: 'all 0.2s ease'
@@ -71,13 +72,13 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
         >
           {theme === 'dark' ? (
             <>
-              <Sun size={15} color="#FBBF24" />
-              <span className="header-badge-text">Light</span>
+              <Sun size={14} color="#FBBF24" />
+              <span className="header-badge-text">Light Mode</span>
             </>
           ) : (
             <>
-              <Moon size={15} color="#6366F1" />
-              <span className="header-badge-text">Dark</span>
+              <Moon size={14} color="#10B981" />
+              <span className="header-badge-text">Dark Mode</span>
             </>
           )}
         </button>
@@ -86,71 +87,72 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
         <div 
           className="desktop-only"
           style={{
-            background: 'rgba(79, 70, 229, 0.08)',
-            border: '1px solid rgba(79, 70, 229, 0.2)',
-            padding: '0.4rem 0.75rem',
-            borderRadius: '20px',
+            background: 'rgba(16, 185, 129, 0.08)',
+            border: '1.5px solid rgba(16, 185, 129, 0.25)',
+            padding: '0.45rem 0.85rem',
+            borderRadius: '9999px',
             display: 'flex',
             alignItems: 'center',
             gap: '0.45rem',
-            fontSize: '0.78rem',
+            fontSize: '0.775rem',
             color: 'var(--accent-primary)',
-            fontWeight: 600
+            fontWeight: 700
           }}
         >
           <Cpu size={14} />
-          <span>ML: <strong>{selectedModel}</strong></span>
+          <span>Active: <strong>{selectedModel}</strong></span>
         </div>
 
         {/* System Health Badge */}
         <div style={{
-          background: isHealthy ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)',
-          border: isHealthy ? '1px solid rgba(16, 185, 129, 0.25)' : '1px solid rgba(239, 68, 68, 0.25)',
-          padding: '0.4rem 0.75rem',
-          borderRadius: '20px',
+          background: isHealthy ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+          border: isHealthy ? '1.5px solid rgba(16, 185, 129, 0.3)' : '1.5px solid rgba(239, 68, 68, 0.3)',
+          padding: '0.45rem 0.85rem',
+          borderRadius: '9999px',
           display: 'flex',
           alignItems: 'center',
-          gap: '0.35rem',
-          fontSize: '0.78rem',
+          gap: '0.4rem',
+          fontSize: '0.775rem',
           color: isHealthy ? 'var(--risk-low)' : 'var(--risk-high)',
-          fontWeight: 600
+          fontWeight: 700
         }}>
           {isHealthy ? <CheckCircle2 size={14} /> : <AlertTriangle size={14} />}
-          <span className="header-badge-text">{isHealthy ? 'FastAPI Online' : 'FastAPI Offline'}</span>
+          <span className="header-badge-text">{isHealthy ? 'LendPulse Core Live' : 'Offline / Standalone'}</span>
         </div>
 
-        {/* User Profile Quick Tag */}
+        {/* User Profile: Mihir Sakariya */}
         <div 
           className="desktop-only"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '0.65rem',
-            paddingLeft: '0.75rem',
-            borderLeft: '1px solid var(--border-color)'
+            gap: '0.75rem',
+            paddingLeft: '0.85rem',
+            borderLeft: '1.5px solid var(--border-color)'
           }}
         >
           <div style={{
-            width: '34px',
-            height: '34px',
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #4F46E5 0%, #0284C7 100%)',
+            width: '36px',
+            height: '36px',
+            borderRadius: '10px',
+            background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontWeight: 700,
-            color: '#FFFFFF',
-            fontSize: '0.825rem',
-            boxShadow: 'var(--shadow-sm)'
+            fontWeight: 800,
+            color: '#090D16',
+            fontSize: '0.85rem',
+            boxShadow: '0 2px 10px rgba(16, 185, 129, 0.3)',
+            fontFamily: 'var(--font-heading)'
           }}>
-            RO
+            MS
           </div>
           <div>
-            <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-main)', lineHeight: 1.2 }}>
-              Risk Officer
+            <div style={{ fontSize: '0.825rem', fontWeight: 700, color: 'var(--text-main)', lineHeight: 1.2 }}>
+              Mihir Sakariya
             </div>
-            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
-              Underwriter
+            <div style={{ fontSize: '0.675rem', color: '#10B981', fontWeight: 600 }}>
+              Lead Risk Architect
             </div>
           </div>
         </div>

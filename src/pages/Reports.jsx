@@ -15,7 +15,7 @@ const Reports = () => {
         const jsonStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(loans, null, 2));
         const downloadAnchor = document.createElement('a');
         downloadAnchor.setAttribute("href", jsonStr);
-        downloadAnchor.setAttribute("download", `CrediGuard_Loan_Risk_Report_${Date.now()}.json`);
+        downloadAnchor.setAttribute("download", `LendPulse_Risk_Audit_Export_${Date.now()}.json`);
         document.body.appendChild(downloadAnchor);
         downloadAnchor.click();
         downloadAnchor.remove();
@@ -38,7 +38,7 @@ const Reports = () => {
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", `CrediGuard_Loan_Risk_Report_${Date.now()}.csv`);
+        link.setAttribute("download", `LendPulse_Risk_Audit_Export_${Date.now()}.csv`);
         document.body.appendChild(link);
         link.click();
         link.remove();
