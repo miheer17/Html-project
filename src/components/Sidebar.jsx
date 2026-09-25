@@ -25,18 +25,7 @@ const Sidebar = ({ isHealthy, isOpen, onClose }) => {
   ];
 
   return (
-    <aside 
-      className={`app-sidebar ${isOpen ? 'mobile-open' : ''}`}
-      style={{
-        width: '260px',
-        background: '#0F172A',
-        borderRight: '1px solid rgba(255, 255, 255, 0.08)',
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        zIndex: 20
-      }}
-    >
+    <aside className={`app-sidebar ${isOpen ? 'mobile-open' : ''}`}>
       {/* Brand Header */}
       <div style={{ padding: '1.25rem 1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
