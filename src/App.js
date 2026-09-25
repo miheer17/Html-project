@@ -57,7 +57,7 @@ function MainLayout() {
     return () => clearInterval(interval);
   }, []);
 
-  const pageInfo = pageTitles[location.pathname] || { title: 'LendPulse AI', subtitle: 'Credit Risk Intelligence' };
+  const pageInfo = pageTitles[location.pathname] || { title: 'CapitalPulse AI', subtitle: 'Credit Risk Intelligence' };
 
   return (
     <div className="app-container">

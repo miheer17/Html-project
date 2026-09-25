@@ -1,72 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
 
 /* ========================================================
-   LendPulse AI - Modern High-End Fintech Design System
-   Color Palette: Deep Obsidian, Luminous Emerald & Cyan
+   CapitalPulse AI - Institutional Banking & Credit Risk Theme
+   Color Palette: Royal Sapphire Blue, Deep Navy, Warm Gold
    ======================================================== */
 :root {
   --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
-  --bg-sidebar: #090D16;
+  --bg-sidebar: #0A1128;
   --border-color: #E2E8F0;
-  --border-glow: rgba(16, 185, 129, 0.4);
+  --border-glow: rgba(37, 99, 235, 0.4);
   
-  --text-main: #0B132B;
+  --text-main: #0F172A;
   --text-muted: #475569;
   --text-dim: #64748B;
   
-  --accent-primary: #059669;
-  --accent-primary-hover: #047857;
-  --accent-cyan: #0891B2;
-  --accent-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+  --accent-primary: #2563EB;
+  --accent-primary-hover: #1D4ED8;
+  --accent-secondary: #0284C7;
+  --accent-gold: #D97706;
+  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   
   --risk-low: #059669;
-  --risk-low-bg: #D1FAE5;
+  --risk-low-bg: #ECFDF5;
   --risk-medium: #D97706;
-  --risk-medium-bg: #FEF3C7;
+  --risk-medium-bg: #FFFBEB;
   --risk-high: #DC2626;
-  --risk-high-bg: #FEE2E2;
+  --risk-high-bg: #FEF2F2;
 
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 14px 34px rgba(15, 23, 42, 0.08);
-  --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.2);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.09);
+  --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.2);
   
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Space Grotesk', sans-serif;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 }
 
-/* Dark Theme Variant: Ultra-Sleek Obsidian */
+/* Dark Theme: Premium Deep Midnight Navy & Royal Sapphire */
 [data-theme="dark"] {
-  --bg-primary: #070B14;
-  --bg-secondary: #0D1527;
-  --bg-card: #0F192E;
-  --bg-card-hover: #162442;
-  --bg-sidebar: #050811;
-  --border-color: rgba(255, 255, 255, 0.09);
-  --border-glow: rgba(16, 185, 129, 0.4);
+  --bg-primary: #070D1E;
+  --bg-secondary: #0D162E;
+  --bg-card: #0F1B38;
+  --bg-card-hover: #16244A;
+  --bg-sidebar: #060B18;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(59, 130, 246, 0.45);
   
-  --text-main: #F1F5F9;
+  --text-main: #F8FAFC;
   --text-muted: #94A3B8;
   --text-dim: #64748B;
   
-  --accent-primary: #10B981;
-  --accent-primary-hover: #059669;
-  --accent-cyan: #22D3EE;
-  --accent-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #2563EB;
+  --accent-secondary: #38BDF8;
+  --accent-gold: #FBBF24;
+  --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   
   --risk-low: #34D399;
-  --risk-low-bg: rgba(16, 185, 129, 0.15);
+  --risk-low-bg: rgba(16, 185, 129, 0.16);
   --risk-medium: #FBBF24;
-  --risk-medium-bg: rgba(245, 158, 11, 0.15);
+  --risk-medium-bg: rgba(245, 158, 11, 0.16);
   --risk-high: #F87171;
-  --risk-high-bg: rgba(239, 68, 68, 0.15);
+  --risk-high-bg: rgba(239, 68, 68, 0.16);
 
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.25);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 28px rgba(59, 130, 246, 0.25);
 }
 
 *, *::before, *::after {
@@ -75,11 +76,6 @@
   padding: 0;
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
 }
 
 html, body {
@@ -101,18 +97,18 @@ html, body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.3);
+  background: rgba(148, 163, 184, 0.35);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
 }
 
-/* Glassmorphism Fintech Card Style */
+/* Glassmorphism Banking Card Style */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 18px;
+  border-radius: 16px;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -127,12 +123,12 @@ html, body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #3B82F6 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #0284C7 50%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Risk Badges with Pill Glow */
+/* Risk Badges */
 .badge-low {
   background: var(--risk-low-bg);
   color: var(--risk-low);
@@ -174,7 +170,7 @@ html, body {
 .app-sidebar {
   width: 260px;
   background: var(--bg-sidebar);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -203,9 +199,9 @@ html, body {
   min-width: 0;
 }
 
-/* Button Styling: Modern Fintech */
+/* Button Styling: Banking Sapphire */
 .btn-primary {
-  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   color: #FFFFFF;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -217,15 +213,14 @@ html, body {
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
   font-size: 0.925rem;
-  letter-spacing: -0.01em;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
-  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.5);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
 }
 
 .btn-primary:active {
@@ -269,7 +264,7 @@ html, body {
 }
 
 .custom-table th {
-  background: rgba(16, 185, 129, 0.04);
+  background: rgba(37, 99, 235, 0.05);
   color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 800;
@@ -282,7 +277,7 @@ html, body {
 }
 
 [data-theme="dark"] .custom-table th {
-  background: rgba(16, 185, 129, 0.06);
+  background: rgba(59, 130, 246, 0.08);
 }
 
 .custom-table td {
@@ -324,7 +319,6 @@ html, body {
   font-size: 0.825rem;
   font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: -0.01em;
 }
 
 .form-input, .form-select {
@@ -343,7 +337,7 @@ html, body {
 
 .form-input:focus, .form-select:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .form-select option {
@@ -436,7 +430,7 @@ html, body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(7, 11, 20, 0.75);
+    background: rgba(6, 11, 24, 0.75);
     backdrop-filter: blur(5px);
     z-index: 999;
   }

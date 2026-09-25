@@ -1,24 +1,30 @@
 import React from 'react';
 
-const StatCard = ({ title, value, subtext, icon: Icon, trend, color = 'emerald' }) => {
+const StatCard = ({ title, value, subtext, icon: Icon, trend, color = 'blue' }) => {
   const colorMap = {
-    emerald: { 
-      bg: 'rgba(16, 185, 129, 0.12)', 
-      text: '#10B981', 
-      border: 'rgba(16, 185, 129, 0.3)',
-      bar: 'linear-gradient(90deg, #10B981, #34D399)'
+    blue: { 
+      bg: 'rgba(37, 99, 235, 0.12)', 
+      text: '#2563EB', 
+      border: 'rgba(37, 99, 235, 0.3)',
+      bar: 'linear-gradient(90deg, #2563EB, #60A5FA)'
     },
-    cyan: { 
-      bg: 'rgba(6, 182, 212, 0.12)', 
-      text: '#06B6D4', 
-      border: 'rgba(6, 182, 212, 0.3)',
-      bar: 'linear-gradient(90deg, #06B6D4, #22D3EE)'
+    gold: { 
+      bg: 'rgba(217, 119, 6, 0.12)', 
+      text: '#D97706', 
+      border: 'rgba(217, 119, 6, 0.3)',
+      bar: 'linear-gradient(90deg, #D97706, #FBBF24)'
     },
     amber: { 
-      bg: 'rgba(245, 158, 11, 0.12)', 
-      text: '#F59E0B', 
-      border: 'rgba(245, 158, 11, 0.3)',
-      bar: 'linear-gradient(90deg, #F59E0B, #FBBF24)'
+      bg: 'rgba(217, 119, 6, 0.12)', 
+      text: '#D97706', 
+      border: 'rgba(217, 119, 6, 0.3)',
+      bar: 'linear-gradient(90deg, #D97706, #FBBF24)'
+    },
+    cyan: { 
+      bg: 'rgba(2, 132, 199, 0.12)', 
+      text: '#0284C7', 
+      border: 'rgba(2, 132, 199, 0.3)',
+      bar: 'linear-gradient(90deg, #0284C7, #38BDF8)'
     },
     rose: { 
       bg: 'rgba(239, 68, 68, 0.12)', 
@@ -27,14 +33,20 @@ const StatCard = ({ title, value, subtext, icon: Icon, trend, color = 'emerald' 
       bar: 'linear-gradient(90deg, #EF4444, #F87171)'
     },
     indigo: { 
-      bg: 'rgba(99, 102, 241, 0.12)', 
-      text: '#818CF8', 
-      border: 'rgba(99, 102, 241, 0.3)',
-      bar: 'linear-gradient(90deg, #6366F1, #818CF8)'
+      bg: 'rgba(79, 70, 229, 0.12)', 
+      text: '#4F46E5', 
+      border: 'rgba(79, 70, 229, 0.3)',
+      bar: 'linear-gradient(90deg, #4F46E5, #818CF8)'
+    },
+    emerald: { 
+      bg: 'rgba(16, 185, 129, 0.12)', 
+      text: '#10B981', 
+      border: 'rgba(16, 185, 129, 0.3)',
+      bar: 'linear-gradient(90deg, #10B981, #34D399)'
     }
   };
 
-  const theme = colorMap[color] || colorMap.emerald;
+  const theme = colorMap[color] || colorMap.blue;
 
   return (
     <div className="glass-card" style={{ padding: '1.4rem', position: 'relative', overflow: 'hidden' }}>
@@ -76,9 +88,9 @@ const StatCard = ({ title, value, subtext, icon: Icon, trend, color = 'emerald' 
         <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 500 }}>
           {trend && (
             <span style={{ 
-              color: trend.startsWith('+') ? '#10B981' : '#EF4444', 
+              color: trend.startsWith('+') ? '#2563EB' : '#EF4444', 
               fontWeight: 700,
-              background: trend.startsWith('+') ? 'rgba(16,185,129,0.12)' : 'rgba(239,68,68,0.12)',
+              background: trend.startsWith('+') ? 'rgba(37, 99, 235, 0.12)' : 'rgba(239,68,68,0.12)',
               padding: '1px 6px',
               borderRadius: '6px'
             }}>

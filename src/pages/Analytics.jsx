@@ -93,14 +93,14 @@ const Analytics = () => {
           return (
             <div key={m.name} className="glass-card" style={{
               padding: '1.5rem',
-              border: isWinner ? '2px solid #10B981' : '1px solid rgba(255,255,255,0.08)',
-              background: isWinner ? 'rgba(16, 185, 129, 0.05)' : 'var(--bg-card)'
+              border: isWinner ? '2px solid #2563EB' : '1px solid rgba(255,255,255,0.08)',
+              background: isWinner ? 'rgba(37, 99, 235, 0.08)' : 'var(--bg-card)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#F8FAFC' }}>{m.name}</h4>
                 {isWinner && (
-                  <span style={{ fontSize: '0.675rem', fontWeight: 800, background: '#10B981', color: '#FFF', padding: '2px 8px', borderRadius: '10px' }}>
-                    WINNER
+                  <span style={{ fontSize: '0.675rem', fontWeight: 800, background: '#2563EB', color: '#FFF', padding: '2px 8px', borderRadius: '10px' }}>
+                    TOP PERFORMER
                   </span>
                 )}
               </div>
@@ -112,7 +112,7 @@ const Analytics = () => {
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.6rem', borderRadius: '8px' }}>
                   <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>F1-Score</div>
-                  <div style={{ fontWeight: 800, color: isWinner ? '#34D399' : '#818CF8', fontSize: '1.1rem' }}>{m.F1_Score.toFixed(4)}</div>
+                  <div style={{ fontWeight: 800, color: isWinner ? '#2563EB' : '#818CF8', fontSize: '1.1rem' }}>{m.F1_Score.toFixed(4)}</div>
                 </div>
                 <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.6rem', borderRadius: '8px' }}>
                   <div style={{ color: '#94A3B8', fontSize: '0.75rem' }}>Precision</div>
@@ -147,7 +147,7 @@ const Analytics = () => {
               <Bar dataKey="Accuracy" fill="#6366F1" radius={[4, 4, 0, 0]} />
               <Bar dataKey="Precision" fill="#F59E0B" radius={[4, 4, 0, 0]} />
               <Bar dataKey="Recall" fill="#38BDF8" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="F1_Score" fill="#10B981" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="F1_Score" fill="#2563EB" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

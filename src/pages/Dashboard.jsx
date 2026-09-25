@@ -98,8 +98,8 @@ const Dashboard = () => {
       {/* Banner */}
       <div className="glass-card" style={{
         padding: '1.75rem 2rem',
-        background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.08) 50%, var(--bg-card) 100%)',
-        border: '1.5px solid rgba(16, 185, 129, 0.35)',
+        background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(2, 132, 199, 0.08) 50%, var(--bg-card) 100%)',
+        border: '1.5px solid rgba(37, 99, 235, 0.35)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -108,9 +108,9 @@ const Dashboard = () => {
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
-            <Sparkles size={18} color="#10B981" />
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#10B981', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              LendPulse AI • Risk Intelligence Network
+            <Sparkles size={18} color="#2563EB" />
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              CapitalPulse AI • Risk Intelligence Network
             </span>
           </div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem', letterSpacing: '-0.02em' }}>
@@ -147,7 +147,7 @@ const Dashboard = () => {
           value={totalApps.toLocaleString()} 
           subtext="Benchmarked + Live inferences" 
           icon={Users} 
-          color="emerald" 
+          color="blue" 
         />
         <StatCard 
           title="Defaulted Loans" 
@@ -260,7 +260,7 @@ const Dashboard = () => {
               Monthly progression of submitted loans versus predicted default events
             </p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#818CF8', fontWeight: 600 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#2563EB', fontWeight: 600 }}>
             <TrendingUp size={16} />
             <span>+12.4% MoM Growth</span>
           </div>
@@ -271,8 +271,8 @@ const Dashboard = () => {
             <AreaChart data={monthlyTrendData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorApps" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10B981" stopOpacity={0.4}/>
-                  <stop offset="95%" stopColor="#10B981" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#2563EB" stopOpacity={0.4}/>
+                  <stop offset="95%" stopColor="#2563EB" stopOpacity={0}/>
                 </linearGradient>
                 <linearGradient id="colorDefs" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#EF4444" stopOpacity={0.4}/>
@@ -283,7 +283,7 @@ const Dashboard = () => {
               <YAxis stroke="#64748B" fontSize={12} />
               <Tooltip contentStyle={{ background: '#0F192E', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', color: '#FFF' }} />
               <Legend verticalAlign="top" height={36} />
-              <Area type="monotone" dataKey="applications" name="Origination Volume" stroke="#10B981" fillOpacity={1} fill="url(#colorApps)" strokeWidth={2} />
+              <Area type="monotone" dataKey="applications" name="Origination Volume" stroke="#2563EB" fillOpacity={1} fill="url(#colorApps)" strokeWidth={2} />
               <Area type="monotone" dataKey="defaults" name="Flagged Default Risk" stroke="#EF4444" fillOpacity={1} fill="url(#colorDefs)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>

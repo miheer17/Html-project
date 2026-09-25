@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, CheckCircle2, AlertTriangle, Sun, Moon, Menu } from 'lucide-react';
+import { Cpu, CheckCircle2, AlertTriangle, Sun, Moon, Menu, Landmark } from 'lucide-react';
 
 const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", theme, toggleTheme, onToggleSidebar }) => {
   return (
@@ -37,8 +37,7 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
             color: 'var(--text-main)', 
             whiteSpace: 'nowrap', 
             overflow: 'hidden', 
-            textOverflow: 'ellipsis',
-            fontFamily: 'var(--font-heading)'
+            textOverflow: 'ellipsis'
           }}>
             {title}
           </h2>
@@ -77,7 +76,7 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
             </>
           ) : (
             <>
-              <Moon size={14} color="#10B981" />
+              <Moon size={14} color="#2563EB" />
               <span className="header-badge-text">Dark Mode</span>
             </>
           )}
@@ -87,8 +86,8 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
         <div 
           className="desktop-only"
           style={{
-            background: 'rgba(16, 185, 129, 0.08)',
-            border: '1.5px solid rgba(16, 185, 129, 0.25)',
+            background: 'rgba(37, 99, 235, 0.08)',
+            border: '1.5px solid rgba(37, 99, 235, 0.25)',
             padding: '0.45rem 0.85rem',
             borderRadius: '9999px',
             display: 'flex',
@@ -100,7 +99,7 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
           }}
         >
           <Cpu size={14} />
-          <span>Active: <strong>{selectedModel}</strong></span>
+          <span>Classifier: <strong>{selectedModel}</strong></span>
         </div>
 
         {/* System Health Badge */}
@@ -117,10 +116,10 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
           fontWeight: 700
         }}>
           {isHealthy ? <CheckCircle2 size={14} /> : <AlertTriangle size={14} />}
-          <span className="header-badge-text">{isHealthy ? 'LendPulse Core Live' : 'Offline / Standalone'}</span>
+          <span className="header-badge-text">{isHealthy ? 'Loan Engine Live' : 'Standalone Mode'}</span>
         </div>
 
-        {/* User Profile: Mihir Sakariya */}
+        {/* Loan Project Brand Logo (Replaced MS) */}
         <div 
           className="desktop-only"
           style={{
@@ -132,27 +131,24 @@ const Header = ({ title, subtitle, isHealthy, selectedModel = "Random Forest", t
           }}
         >
           <div style={{
-            width: '36px',
-            height: '36px',
+            width: '38px',
+            height: '38px',
             borderRadius: '10px',
-            background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 100%)',
+            background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontWeight: 800,
-            color: '#090D16',
-            fontSize: '0.85rem',
-            boxShadow: '0 2px 10px rgba(16, 185, 129, 0.3)',
-            fontFamily: 'var(--font-heading)'
+            boxShadow: '0 2px 10px rgba(37, 99, 235, 0.35)',
+            border: '1px solid rgba(255, 255, 255, 0.15)'
           }}>
-            MS
+            <Landmark size={20} color="#FFFFFF" />
           </div>
           <div>
             <div style={{ fontSize: '0.825rem', fontWeight: 700, color: 'var(--text-main)', lineHeight: 1.2 }}>
-              Mihir Sakariya
+              Credit Underwriter
             </div>
-            <div style={{ fontSize: '0.675rem', color: '#10B981', fontWeight: 600 }}>
-              Lead Risk Architect
+            <div style={{ fontSize: '0.675rem', color: 'var(--text-dim)', fontWeight: 600 }}>
+              Loan Risk Division
             </div>
           </div>
         </div>
