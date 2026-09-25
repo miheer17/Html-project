@@ -12,7 +12,15 @@ export default function handler(req, res) {
   }
 
   try {
-    const input = req.body || {};
+    let input = req.body;
+    if (typeof input === 'string') {
+      try {
+        input = JSON.parse(input);
+      } catch (e) {
+        input = {};
+      }
+    }
+    input = input || {};
     const age = Number(input.Age) || 35;
     const income = Number(input.Income) || 50000;
     const loanAmount = Number(input.LoanAmount) || 20000;
