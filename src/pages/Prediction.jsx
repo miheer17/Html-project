@@ -217,7 +217,7 @@ const Prediction = () => {
       )}
 
       {/* Model Selector Bar */}
-      <div style={{
+      <div className="prediction-selector-bar" style={{
         background: 'linear-gradient(135deg, #4F46E5 0%, #3730A3 100%)',
         border: '1px solid #4338CA',
         padding: '1.25rem 1.75rem',
@@ -247,8 +247,9 @@ const Prediction = () => {
         <select 
           value={selectedModel} 
           onChange={(e) => setSelectedModel(e.target.value)} 
+          className="prediction-select-element"
           style={{ 
-            minWidth: '310px', 
+            maxWidth: '100%', 
             fontWeight: 800, 
             backgroundColor: '#FFFFFF', 
             border: '2px solid #818CF8', 
@@ -270,7 +271,7 @@ const Prediction = () => {
       </div>
 
       {/* Main Layout: Form Left, Prediction Card Right */}
-      <div style={{ display: 'grid', gridTemplateColumns: result ? '1.1fr 0.9fr' : '1fr', gap: '1.75rem', transition: 'all 0.3s ease' }}>
+      <div className={`prediction-layout-grid ${result ? 'has-result' : ''}`}>
         
         {/* Form Container */}
         <form className="glass-card" onSubmit={handleSubmit} style={{ padding: '2rem', background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
@@ -503,7 +504,7 @@ const Prediction = () => {
           </div>
 
           {/* Form Actions */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingTop: '1.25rem', borderTop: '2px solid var(--border-color)' }}>
+          <div className="form-actions-bar" style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingTop: '1.25rem', borderTop: '2px solid var(--border-color)', flexWrap: 'wrap' }}>
             <button type="submit" className="btn-primary" disabled={loading} style={{ padding: '0.85rem 2.25rem', fontSize: '1rem', fontWeight: 800 }}>
               {loading ? (
                 <>

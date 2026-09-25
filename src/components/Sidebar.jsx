@@ -9,10 +9,11 @@ import {
   FileSpreadsheet, 
   UserCheck, 
   Shield, 
-  Activity 
+  Activity,
+  X 
 } from 'lucide-react';
 
-const Sidebar = ({ isHealthy }) => {
+const Sidebar = ({ isHealthy, isOpen, onClose }) => {
   const navItems = [
     { path: '/', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/prediction', label: 'Loan Prediction', icon: Calculator, highlight: true },
@@ -24,38 +25,50 @@ const Sidebar = ({ isHealthy }) => {
   ];
 
   return (
-    <aside style={{
-      width: '260px',
-      background: '#0F172A',
-      borderRight: '1px solid rgba(255, 255, 255, 0.08)',
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-      zIndex: 20
-    }}>
+    <aside 
+      className={`app-sidebar ${isOpen ? 'mobile-open' : ''}`}
+      style={{
+        width: '260px',
+        background: '#0F172A',
+        borderRight: '1px solid rgba(255, 255, 255, 0.08)',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        zIndex: 20
+      }}
+    >
       {/* Brand Header */}
-      <div style={{ padding: '1.5rem 1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <div style={{ padding: '1.25rem 1.25rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{
             background: 'linear-gradient(135deg, #6366F1 0%, #4338CA 100%)',
-            padding: '0.6rem',
+            padding: '0.55rem',
             borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             boxShadow: '0 0 15px rgba(99, 102, 241, 0.4)'
           }}>
-            <Shield size={22} color="#FFFFFF" />
+            <Shield size={20} color="#FFFFFF" />
           </div>
           <div>
             <h1 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.02em' }}>
               Credi<span style={{ color: '#818CF8' }}>Guard</span> AI
             </h1>
-            <p style={{ fontSize: '0.7rem', color: '#94A3B8', fontWeight: 500 }}>
+            <p style={{ fontSize: '0.68rem', color: '#94A3B8', fontWeight: 500 }}>
               Loan Default & Risk Engine
             </p>
           </div>
         </div>
+
+        {/* Mobile Close Button */}
+        <button 
+          onClick={onClose}
+          className="mobile-close-btn"
+          aria-label="Close Sidebar"
+        >
+          <X size={20} />
+        </button>
       </div>
 
       {/* Navigation Links */}
@@ -66,6 +79,7 @@ const Sidebar = ({ isHealthy }) => {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={onClose}
               style={({ isActive }) => ({
                 display: 'flex',
                 alignItems: 'center',

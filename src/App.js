@@ -28,6 +28,12 @@ function MainLayout() {
   const [isHealthy, setIsHealthy] = useState(true);
   const [selectedModel, setSelectedModel] = useState('Random Forest');
   const [theme, setTheme] = useState('light');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Close mobile sidebar on route navigation
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -55,7 +61,17 @@ function MainLayout() {
 
   return (
     <div className="app-container">
-      <Sidebar isHealthy={isHealthy} />
+      {/* Mobile Drawer Backdrop */}
+      <div 
+        className={`sidebar-backdrop ${sidebarOpen ? 'active' : ''}`}
+        onClick={() => setSidebarOpen(false)}
+      />
+
+      <Sidebar 
+        isHealthy={isHealthy} 
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+      />
       
       <div className="main-content">
         <Header 
@@ -65,6 +81,7 @@ function MainLayout() {
           selectedModel={selectedModel}
           theme={theme}
           toggleTheme={toggleTheme}
+          onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
         />
         
         <main className="page-content">

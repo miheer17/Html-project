@@ -185,7 +185,7 @@ const Dashboard = () => {
       </div>
 
       {/* Charts Row 1 */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+      <div className="responsive-grid-2">
         {/* Pie Chart: Default vs Non-default */}
         <div className="glass-card" style={{ padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.25rem' }}>
@@ -304,7 +304,7 @@ const Dashboard = () => {
           </Link>
         </div>
 
-        <div style={{ overflowX: 'auto' }}>
+        <div className="table-responsive">
           <table className="custom-table">
             <thead>
               <tr>

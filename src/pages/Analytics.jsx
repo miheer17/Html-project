@@ -52,18 +52,20 @@ const Analytics = () => {
 
       {/* Winner Banner */}
       <div className="glass-card" style={{
-        padding: '1.5rem 2rem',
+        padding: '1.5rem',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%)',
         border: '1px solid rgba(16, 185, 129, 0.3)',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '1rem'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '0.75rem', borderRadius: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', minWidth: 0 }}>
+          <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '0.75rem', borderRadius: '12px', flexShrink: 0 }}>
             <Award size={28} color="#34D399" />
           </div>
-          <div>
+          <div style={{ minWidth: 0 }}>
             <div style={{ fontSize: '0.775rem', fontWeight: 700, color: '#34D399', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Selected Best Model (Ranked by F1-Score)
             </div>
@@ -85,7 +87,7 @@ const Analytics = () => {
       </div>
 
       {/* Model Benchmark Comparison Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+      <div className="responsive-grid-3">
         {modelComparisonData.map((m) => {
           const isWinner = m.name === bestModel;
           return (

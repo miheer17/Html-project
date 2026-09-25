@@ -30,7 +30,7 @@ const Profile = () => {
       </div>
 
       <div className="glass-card" style={{ padding: '2rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '1.5rem', flexWrap: 'wrap' }}>
           <div style={{
             width: '72px',
             height: '72px',
@@ -42,11 +42,12 @@ const Profile = () => {
             fontSize: '1.75rem',
             fontWeight: 800,
             color: '#FFFFFF',
-            boxShadow: '0 4px 16px rgba(99,102,241,0.4)'
+            boxShadow: '0 4px 16px rgba(99,102,241,0.4)',
+            flexShrink: 0
           }}>
             RO
           </div>
-          <div>
+          <div style={{ minWidth: 0 }}>
             <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#F8FAFC' }}>
               Senior Credit Risk Analyst
             </h3>
@@ -63,7 +64,7 @@ const Profile = () => {
           Backend REST API Diagnostics
         </h4>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <div className="responsive-grid-2">
           <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1rem', borderRadius: '10px' }}>
             <div style={{ fontSize: '0.8rem', color: '#94A3B8' }}>API Connection Status</div>
             <div style={{ fontSize: '1rem', fontWeight: 700, color: health?.status === 'healthy' ? '#34D399' : '#F87171', display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.2rem' }}>

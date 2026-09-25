@@ -41,7 +41,7 @@ const Loans = () => {
         </div>
 
         {/* Filter Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           {/* Search Input */}
           <div style={{ position: 'relative' }}>
             <Search size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
@@ -49,14 +49,14 @@ const Loans = () => {
               type="text" 
               placeholder="Search by ID or Purpose..." 
               value={search} 
-              onChange={(e) => setSearch(e.target.value)}
-              className="form-input"
-              style={{ paddingLeft: '2.25rem', width: '240px', fontSize: '0.85rem' }}
+              onChange={(e) => setSearch(e.target.value)} 
+              className="form-input" 
+              style={{ paddingLeft: '2.25rem', width: '240px', maxWidth: '100%', fontSize: '0.85rem' }} 
             />
           </div>
 
           {/* Risk Level Filter Pill Group */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(15, 23, 42, 0.8)', padding: '0.25rem', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: 'rgba(15, 23, 42, 0.8)', padding: '0.25rem', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.08)', flexWrap: 'wrap' }}>
             {[
               { label: 'All', value: '' },
               { label: 'Low Risk', value: 'Low Risk' },
@@ -86,7 +86,7 @@ const Loans = () => {
       </div>
 
       {/* Loan Table */}
-      <div className="glass-card" style={{ padding: '1.5rem', overflowX: 'auto' }}>
+      <div className="glass-card table-responsive" style={{ padding: '1.5rem' }}>
         {loading ? (
           <div style={{ padding: '3rem', textAlign: 'center', color: '#94A3B8' }}>
             <RefreshCw size={24} className="animate-spin" style={{ margin: '0 auto 0.5rem', display: 'block' }} />
@@ -213,7 +213,9 @@ const Loans = () => {
               marginBottom: '1.5rem',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '0.85rem'
             }}>
               <div>
                 <div style={{ fontSize: '0.8rem', color: '#94A3B8' }}>ML DEFAULT PREDICTION</div>
@@ -231,7 +233,7 @@ const Loans = () => {
             <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#C7D2FE', marginBottom: '0.75rem' }}>
               Submitted Applicant Features (17 ML Inputs)
             </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', fontSize: '0.825rem', marginBottom: '1.5rem' }}>
+            <div className="responsive-grid-2" style={{ gap: '0.75rem', fontSize: '0.825rem', marginBottom: '1.5rem' }}>
               {Object.entries(activeModalLoan.applicantData).map(([key, val]) => (
                 <div key={key} style={{ background: 'rgba(255,255,255,0.03)', padding: '0.6rem 0.85rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ color: '#94A3B8' }}>{key}:</span>

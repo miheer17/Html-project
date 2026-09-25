@@ -70,7 +70,7 @@ const Reports = () => {
           Download complete dataset of session evaluations including probability scores, risk tiers, and applicant features.
         </p>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <button 
             onClick={() => exportReport('csv')} 
             disabled={downloading}

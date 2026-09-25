@@ -35,7 +35,7 @@ const RiskAnalysis = () => {
       </div>
 
       {/* Risk Tiers Cards Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+      <div className="responsive-grid-3">
         {riskThresholds.map((tier) => (
           <div key={tier.level} className="glass-card" style={{
             padding: '1.5rem',
